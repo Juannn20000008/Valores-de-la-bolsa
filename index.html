@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nuestra Bolsa de Valores</title>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #0f0f1e;
+      color: #fff;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #5cffe7;
+      font-size: 3em;
+      margin-bottom: 40px;
+    }
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+    .value-card {
+      background: linear-gradient(145deg, #1a1a2e, #16213e);
+      border-radius: 15px;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    .value-card:hover {
+      transform: translateY(-10px);
+    }
+    .value-image {
+      width: 100px;
+      height: 100px;
+      margin: 0 auto 20px;
+      background-size: cover;
+      background-position: center;
+      border-radius: 50%;
+      border: 3px solid #5cffe7;
+    }
+    .value-number {
+      font-size: 2em;
+      color: #5cffe7;
+      margin-bottom: 10px;
+    }
+    .value-title {
+      font-size: 1.2em;
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+    .value-description {
+      display: none;
+      font-size: 0.9em;
+      color: #b3b3b3;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Nuestra Bolsa de Valores</h1>
+    <div class="values-grid">
+      <div class="value-card" onclick="toggleDescription(this)">
+        <div class="value-image" style="background-image: url('/api/placeholder/100/100');"></div>
+        <div class="value-number">1</div>
+        <div class="value-title">El valor del tiempo</div>
+        <div class="value-description">Reconocemos que el tiempo es un recurso precioso y limitado. Nos comprometemos a aprovecharlo de manera consciente y productiva, enfocándonos en lo que realmente importa.</div>
+      </div>
+      <div class="value-card" onclick="toggleDescription(this)">
+        <div class="value-image" style="background-image: url('/api/placeholder/100/100');"></div>
+        <div class="value-number">2</div>
+        <div class="value-title">El éxito de la perseverancia</div>
+        <div class="value-description">Creemos en el poder de la persistencia y la determinación. Entendemos que el verdadero éxito se logra a través del esfuerzo constante y la superación de obstáculos.</div>
+      </div>
+      <div class="value-card" onclick="toggleDescription(this)">
+        <div class="value-image" style="background-image: url('/api/placeholder/100/100');"></div>
+        <div class="value-number">3</div>
+        <div class="value-title">La satisfacción del trabajo honrado</div>
+        <div class="value-description">Valoramos el trabajo realizado con integridad y dedicación. Encontramos satisfacción y orgullo en cumplir nuestras responsabilidades de manera honesta y ética.</div>
+      </div>
+      <div class="value-card" onclick="toggleDescription(this)">
+        <div class="value-image" style="background-image: url('/api/placeholder/100/100');"></div>
+        <div class="value-number">4</div>
+        <div class="value-title">La dignidad de la sencillez</div>
+        <div class="value-description">Apreciamos la belleza de la simplicidad y la humildad. Creemos que la verdadera dignidad se encuentra en vivir de manera auténtica y sin pretensiones.</div>
+      </div>
+      <div class="value-card" onclick="toggleDescription(this)">
+        <div class="value-image" style="background-image: url('/api/placeholder/100/100');"></div>
+        <div class="value-number">5</div>
+        <div class="value-title">La importancia del carácter</div>
+        <div class="value-description">Reconocemos que nuestro carácter es fundamental. Nos esforzamos por cultivar virtudes y principios sólidos que guíen nuestras acciones y decisiones.</div>
+      </div>
+      <div class="value-card" onclick="toggleDescription(this)">
+        <div class="value-image" style="background-image: url('/api/placeholder/100/100');"></div>
+        <div class="value-number">6</div>
+        <div class="value-title">El encanto de la amabilidad</div>
+        <div class="value-description">Creemos en el poder transformador de la amabilidad. Nos comprometemos a tratar a los demás con gentileza, empatía y respeto en todas nuestras interacciones.</div>
+      </div>
+      <div class="value-card" onclick="toggleDescription(this)">
+        <div class="value-image" style="background-image: url('/api/placeholder/100/100');"></div>
+        <div class="value-number">7</div>
+        <div class="value-title">La influencia del ejemplo</div>
+        <div class="value-description">Entendemos que nuestras acciones hablan más fuerte que nuestras palabras. Nos esforzamos por ser modelos positivos e inspirar a otros a través de nuestro comportamiento.</div>
+      </div>
+      <div class="value-card" onclick="toggleDescription(this)">
+        <div class="value-image" style="background-image: url('/api/placeholder/100/100');"></div>
+        <div class="value-number">8</div>
+        <div class="value-title">La fuerza del deber</div>
+        <div class="value-description">Reconocemos la importancia de cumplir con nuestras obligaciones y compromisos. Asumimos nuestras responsabilidades con seriedad y dedicación.</div>
+      </div>
+      <div class="value-card" onclick="toggleDescription(this)">
+        <div class="value-image" style="background-image: url('/api/placeholder/100/100');"></div>
+        <div class="value-number">9</div>
+        <div class="value-title">La prudencia de la economía</div>
+        <div class="value-description">Valoramos la gestión sabia de nuestros recursos. Practicamos la moderación y la previsión en nuestras decisiones financieras y personales.</div>
+      </div>
+      <div class="value-card" onclick="toggleDescription(this)">
+        <div class="value-image" style="background-image: url('/api/placeholder/100/100');"></div>
+        <div class="value-number">10</div>
+        <div class="value-title">El poder de la paciencia</div>
+        <div class="value-description">Reconocemos que las cosas valiosas a menudo requieren tiempo. Cultivamos la paciencia como una virtud que nos ayuda a perseverar y a mantener la calma en situaciones difíciles.</div>
+      </div>
+      <div class="value-card" onclick="toggleDescription(this)">
+        <div class="value-image" style="background-image: url('/api/placeholder/100/100');"></div>
+        <div class="value-number">11</div>
+        <div class="value-title">La luz de la rectitud</div>
+        <div class="value-description">Nos comprometemos a actuar con integridad y justicia. Buscamos hacer lo correcto, incluso cuando nadie nos está observando.</div>
+      </div>
+      <div class="value-card" onclick="toggleDescription(this)">
+        <div class="value-image" style="background-image: url('/api/placeholder/100/100');"></div>
+        <div class="value-number">12</div>
+        <div class="value-title">La magia del amor</div>
+        <div class="value-description">Creemos en el poder transformador del amor. Nos esforzamos por cultivar relaciones basadas en el afecto, la comprensión y el apoyo mutuo.</div>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    function toggleDescription(card) {
+      const description = card.querySelector('.value-description');
+      if (description.style.display === 'none' || description.style.display === '') {
+        description.style.display = 'block';
+        description.style.animation = 'fadeIn 0.5s ease';
+      } else {
+        description.style.display = 'none';
+      }
+    }
+  </script>
+</body>
+  </html>
